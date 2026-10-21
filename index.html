@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fed Prediction Markets Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Macro / Risk Monitor</p>
+          <h1>Fed Prediction Markets Dashboard</h1>
+        </div>
+        <div class="status-pill">
+          <span class="dot"></span>
+          Live signal snapshot
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <section class="kpi-row" id="kpiRow"></section>
+
+        <section class="chart-grid">
+          <article class="panel chart-panel">
+            <div class="panel-header">
+              <h2>Signal strength</h2>
+              <span class="tag positive">Improving</span>
+            </div>
+            <canvas id="signalChart"></canvas>
+          </article>
+
+          <article class="panel chart-panel">
+            <div class="panel-header">
+              <h2>Risk regime</h2>
+              <span class="tag neutral">Balanced</span>
+            </div>
+            <canvas id="regimeChart"></canvas>
+          </article>
+
+          <article class="panel chart-panel wide">
+            <div class="panel-header">
+              <h2>Policy path / horizon</h2>
+              <span class="tag neutral">12M outlook</span>
+            </div>
+            <canvas id="pathChart"></canvas>
+          </article>
+        </section>
+
+        <section class="panel table-panel">
+          <div class="panel-header">
+            <h2>Evidence summary</h2>
+            <span class="tag neutral">Updated weekly</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Metric</th>
+                  <th>Reading</th>
+                  <th>Signal</th>
+                  <th>Beta</th>
+                  <th>Lag</th>
+                </tr>
+              </thead>
+              <tbody id="evidenceTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
